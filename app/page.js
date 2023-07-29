@@ -1,6 +1,9 @@
-import Image from 'next/image'
 import styles from './page.module.css'
 import { unstable_cache } from 'next/cache'
+
+export const runtime = 'edge'
+export const fetchCache = 'force-no-store'
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const result = unstable_cache(async () => {
