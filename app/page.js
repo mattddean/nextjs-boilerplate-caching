@@ -1,7 +1,6 @@
 import styles from './page.module.css'
 import { unstable_cache } from 'next/cache'
 
-export const runtime = 'edge'
 export const fetchCache = 'force-no-store'
 export const dynamic = 'force-dynamic'
 
