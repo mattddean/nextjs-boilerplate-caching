@@ -1,19 +1,19 @@
 import { unstable_cache } from "next/cache";
 
-export const revalidate = 0;
+export const runtime = "edge";
+export const fetchCache = "default-no-store";
 
 export default async function Home() {
   const result = unstable_cache(
     async () => {
-      console.time("revalidating");
+      console.time("revalidate edge-unstable-cache");
       await new Promise((r) => setTimeout(r, 5000));
-      console.timeEnd("revalidating");
-      return "test";
+      console.timeEnd("revalidate edge-unstable-cache");
+      return "edge-unstable-cache";
     },
-    ["test"],
+    ["edge-unstable-cache"],
     {
       revalidate: 10,
-      tags: ["test"],
     }
   );
   const hi = await result();
