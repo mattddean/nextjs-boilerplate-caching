@@ -19,5 +19,5 @@ export default async function Home() {
   );
   const hi = await result();
 
-  return <main className={styles.main}>{hi}</main>;
+  return <main>{hi}</main>;
 }
